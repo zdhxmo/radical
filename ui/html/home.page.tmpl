@@ -1,0 +1,13 @@
+{{template "home_base" .}}
+
+{{define "title"}}rAdIcal{{end}}
+
+{{define "home_body"}}
+<form action="/execute-query" method="post" enctype="multipart/form-data">
+    <label for="query">Enter your query:</label>
+    <input type="text" id="query" name="query" />
+    <label for="image">Select an image to upload:</label>
+    <input type="file" id="image" name="image" />
+    <input type="submit" value="Submit" />
+</form>
+{{end}}

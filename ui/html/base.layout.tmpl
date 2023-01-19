@@ -1,0 +1,86 @@
+{{define "home_base"}}
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>{{template "title" .}}</title>
+        <!-- Link to the CSS stylesheet and favicon -->
+        <link rel='stylesheet' href='/static/main.css'>
+    </head>
+
+    <body>
+        <header>
+            <h1><a href='/'>rAdIcal</a></h1>
+        </header>
+
+        <nav>
+            <a href='/'>Home</a>
+        </nav>
+
+        <section>
+            {{template "home_body" .}}
+        </section>
+
+        <!-- Invoke the footer template -->
+        {{template "footer" .}}
+    </body>
+</html>
+{{end}}
+
+{{define "select_base"}}
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>{{template "title" .}}</title>
+        <!-- Link to the CSS stylesheet and favicon -->
+        <link rel='stylesheet' href='/static/main.css'>
+    </head>
+
+    <body>
+        <header>
+            <h1><a href='/'>rAdIcal</a></h1>
+        </header>
+
+        <nav>
+            <a href='/'>Home</a>
+        </nav>
+
+        <section>
+            {{template "select_body" .}}
+        </section>
+
+        <!-- Invoke the footer template -->
+        {{template "footer" .}}
+    </body>
+</html>
+{{end}}
+
+{{define "video_base"}}
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>{{template "title" .}}</title>
+        <!-- Link to the CSS stylesheet and favicon -->
+        <link rel='stylesheet' href='/static/main.css'>
+    </head>
+
+    <body>
+        <header>
+            <h1><a href='/'>rAdIcal</a></h1>
+        </header>
+
+        <nav>
+            <a href='/'>Home</a>
+        </nav>
+
+        <section>
+            {{template "video_body" .}}
+        </section>
+
+        <!-- Invoke the footer template -->
+        {{template "footer" .}}
+    </body>
+</html>
+{{end}}
