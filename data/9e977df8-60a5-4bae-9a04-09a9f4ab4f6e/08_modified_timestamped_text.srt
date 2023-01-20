@@ -1,0 +1,28 @@
+1
+00:00:00,09 --> 00:00:01,05
+There's  nothing  quite  like 
+
+2
+00:00:01,09 --> 00:00:01,78
+ the  taste  of  ice 
+
+3
+00:00:01,81 --> 00:00:02,49
+ cream  on  a  hot 
+
+4
+00:00:02,53 --> 00:00:04,79
+ day.  The  cool,  refreshing 
+
+5
+00:00:04,84 --> 00:00:05,87
+ flavor  is  the  perfect 
+
+6
+00:00:05,94 --> 00:00:06,81
+ way  to  cool  down 
+
+7
+00:00:06,85 --> 00:00:07,78
+ and  enjoy  the  summer 
+

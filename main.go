@@ -43,6 +43,7 @@ var (
     timestampASS string
     videoAudioFileName string
     finalVideoName string
+    convertName string
 )
 
 func main() {
@@ -50,6 +51,10 @@ func main() {
 
     r := gin.Default()
     r.LoadHTMLGlob("./ui/html/**")
+    r.Static("/static", "ui/static")
+
+    videoPath := directory + "/10_FINAL_VIDEO.mp4"
+    r.Static(videoPath, directory)
 
     r.GET("/", homePage)
     r.POST("/execute-query", openAI_APICall)
@@ -570,11 +575,13 @@ type Overlay struct {
 
 func composite() {
 
-    videoPath := directory + "/10_FINAL_VIDEO.mkv"
+    //videoPath := directory + "/10_FINAL_VIDEO.mkv"
+
+    videoPath := directory + "/10_FINAL_VIDEO.mp4"
     finalVideoName = videoPath
 
     // Define the ffmpeg command to overlay the text on the video
-    cmd := exec.Command("ffmpeg", "-i", videoAudioFileName, "-vf", "subtitles=" + timestampASS + ":force_style='FontName=DejaVuSans,FontSize=10,Alignment=11,Outline=1,MarginV=1440,MarginR=30'", videoPath)
+    cmd := exec.Command("ffmpeg", "-i", videoAudioFileName, "-vf", "subtitles=" + timestampASS + ":force_style='FontName=DejaVuSans,FontSize=10,Alignment=11,Outline=1,MarginV=1440,MarginR=30'", "-strict", "experimental", "-f", "mp4", videoPath)
 
     // Run the command
     output, err := cmd.CombinedOutput()
@@ -586,7 +593,13 @@ func composite() {
 }
 
 func showVideo(c *gin.Context) {
-    c.HTML(http.StatusOK, "video.page.tmpl", gin.H{
-        "videoPath": finalVideoName,
-    })
+    c.Header("Content-Type", "video/mp4")
+
+    c.File(finalVideoName)
+
+    /*
+     *c.HTML(http.StatusOK, "video.page.tmpl", gin.H{
+     *    "videoPath": finalVideoName,
+     *})
+     */
 }

@@ -3,5 +3,8 @@
 {{define "title"}}rAdIcal{{end}}
 
 {{define "video_body"}}
-<video width="320" height="240" controls src="{{ .videoPath }}" controls></video>
+ <video controls>
+  <source src="{{ .videoPath }}" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 {{end}}
